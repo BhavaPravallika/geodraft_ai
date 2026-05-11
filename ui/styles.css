@@ -1,0 +1,148 @@
+/* ui/styles.css */
+/* Import Inter font for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Global resets & typography */
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Hide default Streamlit elements */
+#MainMenu {visibility: hidden;}
+header {visibility: hidden;}
+footer {visibility: hidden;}
+
+/* Adjust main container padding to look more like a web app */
+.block-container {
+    padding-top: 2rem !important;
+    padding-bottom: 3rem !important;
+    max-width: 1400px !important;
+}
+
+/* Custom Card Styling */
+.saas-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f1f5f9;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.saas-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Buttons */
+.stButton > button {
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+}
+.stButton > button[kind="primary"] {
+    background-color: #3b82f6 !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3) !important;
+}
+.stButton > button[kind="primary"]:hover {
+    background-color: #2563eb !important;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.4) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Dataframe/Table overrides */
+[data-testid="stDataFrame"] {
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+/* File Uploader styling */
+[data-testid="stFileUploadDropzone"] {
+    border: 2px dashed #cbd5e1 !important;
+    border-radius: 12px !important;
+    background-color: #f8fafc !important;
+    transition: all 0.2s ease !important;
+}
+[data-testid="stFileUploadDropzone"]:hover {
+    border-color: #3b82f6 !important;
+    background-color: #eff6ff !important;
+}
+
+/* Custom Progress Bar */
+.stProgress > div > div > div {
+    background-color: #3b82f6 !important;
+}
+
+/* Sidebar styling */
+[data-testid="stSidebar"] {
+    background-color: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+}
+[data-testid="stSidebar"] hr {
+    border-color: #e2e8f0;
+}
+
+/* Step Indicators (Custom HTML injected) */
+.step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    position: relative;
+}
+.step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    width: 100px;
+}
+.step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #e2e8f0;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid white;
+}
+.step-circle.active {
+    background-color: #3b82f6;
+    color: white;
+    box-shadow: 0 0 0 4px #eff6ff;
+}
+.step-circle.completed {
+    background-color: #10b981;
+    color: white;
+}
+.step-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-align: center;
+    font-weight: 500;
+}
+.step-label.active {
+    color: #1e293b;
+    font-weight: 600;
+}
+.step-line {
+    position: absolute;
+    top: 16px;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background-color: #e2e8f0;
+    z-index: 0;
+}
+.step-line-progress {
+    height: 100%;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+}
